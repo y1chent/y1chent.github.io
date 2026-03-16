@@ -170,7 +170,7 @@
 .post {
   max-width: $max-width;
   margin: 0 auto;
-  padding: $nav-height + 2rem 1.5rem 3rem;
+  padding: calc(#{$nav-height} + 2rem) 1.5rem 3rem;
 }
 
 .post-header {
@@ -223,7 +223,7 @@
 .blog-list-page {
   max-width: $max-width;
   margin: 0 auto;
-  padding: $nav-height + 2rem 1.5rem 3rem;
+  padding: calc(#{$nav-height} + 2rem) 1.5rem 3rem;
 
   h1 {
     font-size: 2rem;
