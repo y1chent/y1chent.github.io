@@ -26,12 +26,9 @@
     }
   }
 
-  .hero-name {
-    font-size: 2.2rem;
-  }
-
+  .hero-name,
   .terminal-splash {
-    max-width: 90vw;
+    font-size: 2.2rem;
   }
 
   .hero-tagline {
@@ -48,12 +45,9 @@
 }
 
 @media (max-width: $breakpoint-sm) {
-  .hero-name {
-    font-size: 1.8rem;
-  }
-
+  .hero-name,
   .terminal-splash {
-    max-width: 95vw;
+    font-size: 1.8rem;
   }
 
   section {
