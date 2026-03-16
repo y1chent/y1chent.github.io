@@ -1,0 +1,26 @@
+title: "Yichen Tao"
+description: "PhD Student at Texas A&M University — Deep Learning, Temporal Modeling, Survival Analysis, AI for Health"
+url: "https://y1chent.github.io"
+baseurl: ""
+
+author:
+  name: "Yichen Tao"
+  email: "yichentao@tamu.edu"
+  github: "y1chent"
+  linkedin: "#"
+  scholar: "#"
+
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+
+plugins:
+  - jekyll-seo-tag
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md

@@ -1,0 +1,232 @@
+// Publications
+.pub-list {
+  list-style: none;
+}
+
+.pub-item {
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  background: $bg-card;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  transition: border-color 0.2s;
+
+  &:hover {
+    border-color: $accent-green;
+  }
+}
+
+.pub-title {
+  font-size: 1.05rem;
+  color: $text-primary;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.pub-authors {
+  color: $text-secondary;
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+}
+
+.pub-venue {
+  color: $text-muted;
+  font-size: 0.8rem;
+  font-style: italic;
+  margin-bottom: 0.6rem;
+}
+
+.pub-links {
+  display: flex;
+  gap: 0.5rem;
+
+  a {
+    display: inline-block;
+    padding: 0.2rem 0.7rem;
+    font-size: 0.75rem;
+    border: 1px solid $accent-cyan;
+    border-radius: 3px;
+    color: $accent-cyan;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.2s;
+
+    &:hover {
+      background: $accent-cyan;
+      color: $bg-primary;
+    }
+  }
+}
+
+// Projects
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  background: $bg-card;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  padding: 1.5rem;
+  transition: border-color 0.2s, transform 0.2s;
+
+  &:hover {
+    border-color: $accent-green;
+    transform: translateY(-3px);
+  }
+}
+
+.project-name {
+  font-size: 1.1rem;
+  color: $accent-green;
+  margin-bottom: 0.5rem;
+}
+
+.project-desc {
+  color: $text-secondary;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.tag {
+  padding: 0.15rem 0.5rem;
+  font-size: 0.7rem;
+  background: rgba($accent-green, 0.1);
+  color: $accent-green;
+  border-radius: 3px;
+  border: 1px solid rgba($accent-green, 0.3);
+}
+
+.project-links {
+  display: flex;
+  gap: 0.5rem;
+
+  a {
+    font-size: 0.8rem;
+    color: $accent-cyan;
+
+    &:hover {
+      color: $accent-green;
+    }
+  }
+}
+
+// Blog
+.blog-preview-list {
+  list-style: none;
+}
+
+.blog-preview-item {
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  background: $bg-card;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  transition: border-color 0.2s;
+
+  &:hover {
+    border-color: $accent-cyan;
+  }
+}
+
+.blog-preview-title {
+  font-size: 1.1rem;
+  color: $accent-green;
+  margin-bottom: 0.3rem;
+
+  a {
+    color: inherit;
+  }
+}
+
+.blog-preview-date {
+  font-size: 0.8rem;
+  color: $text-muted;
+  margin-bottom: 0.5rem;
+}
+
+.blog-preview-excerpt {
+  color: $text-secondary;
+  font-size: 0.9rem;
+}
+
+.view-all {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: $accent-cyan;
+  font-size: 0.9rem;
+}
+
+// Post page
+.post {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: $nav-height + 2rem 1.5rem 3rem;
+}
+
+.post-header {
+  margin-bottom: 2rem;
+
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+.post-date {
+  color: $text-muted;
+  font-size: 0.85rem;
+}
+
+.post-content {
+  p {
+    margin-bottom: 1.2rem;
+  }
+
+  code {
+    background: $bg-card;
+    padding: 0.15rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.9em;
+  }
+
+  pre {
+    background: $bg-card;
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin-bottom: 1.2rem;
+
+    code {
+      padding: 0;
+      background: none;
+    }
+  }
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 2rem;
+  color: $accent-cyan;
+  font-size: 0.9rem;
+}
+
+// Blog listing page
+.blog-list-page {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: $nav-height + 2rem 1.5rem 3rem;
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}

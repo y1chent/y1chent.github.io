@@ -1,0 +1,17 @@
+---
+layout: default
+title: "Blog — Yichen Tao"
+---
+
+<div class="blog-list-page">
+  <h1 class="glitch" data-text="Blog">Blog</h1>
+  <ul class="blog-preview-list">
+    {% for post in site.posts %}
+    <li class="blog-preview-item">
+      <h3 class="blog-preview-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <div class="blog-preview-date">{{ post.date | date: "%B %d, %Y" }}</div>
+      <p class="blog-preview-excerpt">{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

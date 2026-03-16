@@ -1,0 +1,24 @@
+- name: "SurvivalNet"
+  description: "A deep learning framework for flexible survival analysis with temporal modeling and competing risks."
+  tags: ["PyTorch", "Survival Analysis", "Deep Learning"]
+  links:
+    - label: "GitHub"
+      url: "#"
+    - label: "Paper"
+      url: "#"
+
+- name: "HealthTS"
+  description: "Time-series analysis toolkit for electronic health records with built-in preprocessing and benchmarking."
+  tags: ["Python", "EHR", "Time Series"]
+  links:
+    - label: "GitHub"
+      url: "#"
+
+- name: "NeuroViz"
+  description: "Interactive visualization tool for neural network attention patterns in clinical NLP models."
+  tags: ["JavaScript", "D3.js", "NLP"]
+  links:
+    - label: "Demo"
+      url: "#"
+    - label: "GitHub"
+      url: "#"

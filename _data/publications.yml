@@ -1,0 +1,27 @@
+- title: "Placeholder: Temporal Deep Learning for Survival Analysis"
+  authors: "Yichen Tao, Collaborator A, Advisor B"
+  venue: "Conference on Machine Learning (ICML)"
+  year: 2026
+  links:
+    - label: "PDF"
+      url: "#"
+    - label: "Code"
+      url: "#"
+
+- title: "Placeholder: Neural Architectures for Time-Series Health Data"
+  authors: "Yichen Tao, Collaborator C"
+  venue: "AAAI Conference on Artificial Intelligence"
+  year: 2025
+  links:
+    - label: "PDF"
+      url: "#"
+
+- title: "Placeholder: Multi-Modal Learning for Clinical Event Prediction"
+  authors: "Collaborator D, Yichen Tao, Advisor B"
+  venue: "NeurIPS Workshop on ML4H"
+  year: 2025
+  links:
+    - label: "PDF"
+      url: "#"
+    - label: "Code"
+      url: "#"

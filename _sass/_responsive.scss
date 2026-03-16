@@ -1,0 +1,60 @@
+@media (max-width: $breakpoint-md) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: $nav-height;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: rgba($bg-primary, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem 2rem;
+    gap: 1rem;
+    border-bottom: 1px solid $border-color;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s, opacity 0.3s;
+
+    &.open {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  .hero-name {
+    font-size: 2.2rem;
+  }
+
+  .hero-tagline {
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .hero-name {
+    font-size: 1.8rem;
+  }
+
+  section {
+    padding: 3rem 1rem 2rem;
+  }
+
+  .pub-item,
+  .project-card,
+  .blog-preview-item {
+    padding: 1rem;
+  }
+}

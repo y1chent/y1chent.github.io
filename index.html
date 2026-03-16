@@ -1,0 +1,89 @@
+---
+layout: default
+title: "Yichen Tao — Researcher"
+---
+
+<!-- Hero / About -->
+<section class="hero" id="about">
+  <h1 class="hero-name glitch" data-text="Yichen Tao">Yichen Tao</h1>
+  <p class="hero-tagline">
+    <span id="typing-text"></span><span class="typing-cursor"></span>
+  </p>
+  <p class="hero-bio">
+    PhD student at Texas A&M University, STMI Lab. My research focuses on deep learning approaches for temporal modeling, survival analysis, and AI-driven health applications.
+  </p>
+  <p class="hero-affiliation">Texas A&M University &middot; Department of Computer Science</p>
+  <div class="social-links">
+    <a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="{{ site.author.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="{{ site.author.scholar }}" target="_blank" rel="noopener" aria-label="Google Scholar">
+      <i class="ai ai-google-scholar"></i>
+    </a>
+    <a href="mailto:{{ site.author.email }}" aria-label="Email">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
+</section>
+
+<!-- Publications -->
+<section id="publications">
+  <h2 class="glitch" data-text="Publications">Publications</h2>
+  <ul class="pub-list">
+    {% for pub in site.data.publications %}
+    <li class="pub-item">
+      <div class="pub-title">{{ pub.title }}</div>
+      <div class="pub-authors">{{ pub.authors }}</div>
+      <div class="pub-venue">{{ pub.venue }}, {{ pub.year }}</div>
+      {% if pub.links %}
+      <div class="pub-links">
+        {% for link in pub.links %}
+        <a href="{{ link.url }}">{{ link.label }}</a>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+  <h2 class="glitch" data-text="Projects">Projects</h2>
+  <div class="project-grid">
+    {% for project in site.data.projects %}
+    <div class="project-card">
+      <h3 class="project-name">{{ project.name }}</h3>
+      <p class="project-desc">{{ project.description }}</p>
+      <div class="project-tags">
+        {% for tag in project.tags %}
+        <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      <div class="project-links">
+        {% for link in project.links %}
+        <a href="{{ link.url }}">{{ link.label }} &rarr;</a>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Blog -->
+<section id="blog">
+  <h2 class="glitch" data-text="Blog">Blog</h2>
+  <ul class="blog-preview-list">
+    {% for post in site.posts limit:3 %}
+    <li class="blog-preview-item">
+      <h3 class="blog-preview-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <div class="blog-preview-date">{{ post.date | date: "%B %d, %Y" }}</div>
+      <p class="blog-preview-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+  <a href="{{ '/blog.html' | relative_url }}" class="view-all">View all posts &rarr;</a>
+</section>
