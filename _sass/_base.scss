@@ -8,6 +8,22 @@ html {
   scroll-behavior: smooth;
 }
 
+#matrix-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.15;
+}
+
+body > *:not(#matrix-bg) {
+  position: relative;
+  z-index: 1;
+}
+
 body {
   background: $bg-primary;
   color: $text-primary;
