@@ -6,6 +6,7 @@
 
 html {
   scroll-behavior: smooth;
+  background: $bg-primary;
 }
 
 #matrix-bg {
@@ -25,7 +26,7 @@ body > *:not(#matrix-bg) {
 }
 
 body {
-  background: $bg-primary;
+  background: transparent;
   color: $text-primary;
   font-family: $font-mono;
   font-size: 16px;
