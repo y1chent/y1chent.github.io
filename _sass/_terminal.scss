@@ -1,0 +1,89 @@
+.terminal-splash {
+  font-family: $font-mono;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: $text-primary;
+  margin-bottom: 0.5rem;
+  position: relative;
+  display: inline-block;
+  // CRT scanline overlay
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.1) 2px,
+      rgba(0, 0, 0, 0.1) 4px
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
+.terminal-text {
+  position: relative;
+  z-index: 2;
+  // Subtle CRT text shadow for depth
+  text-shadow: 0 0 2px rgba($accent, 0.3);
+}
+
+.terminal-cursor {
+  display: inline-block;
+  color: $accent;
+  animation: cursor-blink 1s step-end infinite;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+// Glitch flicker - applied via JS class toggle
+.terminal-glitch {
+  animation: terminal-flicker 0.15s ease-in-out;
+}
+
+@keyframes terminal-flicker {
+  0% { opacity: 1; transform: translate(0); }
+  20% { opacity: 0.8; transform: translate(-2px, 1px); }
+  40% { opacity: 1; transform: translate(1px, -1px); }
+  60% { opacity: 0.7; transform: translate(-1px, 0); color: $accent; }
+  80% { opacity: 1; transform: translate(1px, 1px); }
+  100% { opacity: 1; transform: translate(0); }
+}
+
+// CRT power-on effect on the whole splash
+.terminal-crt-on {
+  animation: crt-on 0.5s ease-out;
+}
+
+@keyframes crt-on {
+  0% {
+    filter: brightness(10) saturate(0);
+    transform: scaleY(0.01);
+  }
+  40% {
+    filter: brightness(2) saturate(0.5);
+    transform: scaleY(1.05);
+  }
+  70% {
+    filter: brightness(1.2);
+    transform: scaleY(0.98);
+  }
+  100% {
+    filter: brightness(1);
+    transform: scaleY(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .terminal-splash::after { display: none; }
+  .terminal-cursor { animation: none; opacity: 1; }
+  .terminal-glitch { animation: none; }
+  .terminal-crt-on { animation: none; }
+}

@@ -12,7 +12,7 @@
   transition: border-color 0.2s;
 
   &:hover {
-    border-color: $accent-green;
+    border-color: $accent;
   }
 }
 
@@ -44,15 +44,15 @@
     display: inline-block;
     padding: 0.2rem 0.7rem;
     font-size: 0.75rem;
-    border: 1px solid $accent-cyan;
+    border: 1px solid $accent-secondary;
     border-radius: 3px;
-    color: $accent-cyan;
+    color: $accent-secondary;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     transition: all 0.2s;
 
     &:hover {
-      background: $accent-cyan;
+      background: $accent-secondary;
       color: $bg-primary;
     }
   }
@@ -73,14 +73,14 @@
   transition: border-color 0.2s, transform 0.2s;
 
   &:hover {
-    border-color: $accent-green;
+    border-color: $accent;
     transform: translateY(-3px);
   }
 }
 
 .project-name {
   font-size: 1.1rem;
-  color: $accent-green;
+  color: $accent;
   margin-bottom: 0.5rem;
 }
 
@@ -100,10 +100,10 @@
 .tag {
   padding: 0.15rem 0.5rem;
   font-size: 0.7rem;
-  background: rgba($accent-green, 0.1);
-  color: $accent-green;
+  background: rgba($accent, 0.1);
+  color: $accent;
   border-radius: 3px;
-  border: 1px solid rgba($accent-green, 0.3);
+  border: 1px solid rgba($accent, 0.3);
 }
 
 .project-links {
@@ -112,10 +112,10 @@
 
   a {
     font-size: 0.8rem;
-    color: $accent-cyan;
+    color: $accent-secondary;
 
     &:hover {
-      color: $accent-green;
+      color: $accent;
     }
   }
 }
@@ -134,13 +134,13 @@
   transition: border-color 0.2s;
 
   &:hover {
-    border-color: $accent-cyan;
+    border-color: $accent-secondary;
   }
 }
 
 .blog-preview-title {
   font-size: 1.1rem;
-  color: $accent-green;
+  color: $accent;
   margin-bottom: 0.3rem;
 
   a {
@@ -162,7 +162,7 @@
 .view-all {
   display: inline-block;
   margin-top: 1.5rem;
-  color: $accent-cyan;
+  color: $accent-secondary;
   font-size: 0.9rem;
 }
 
@@ -192,14 +192,14 @@
   }
 
   code {
-    background: $bg-card;
+    background: $bg-code;
     padding: 0.15rem 0.4rem;
     border-radius: 3px;
     font-size: 0.9em;
   }
 
   pre {
-    background: $bg-card;
+    background: $bg-code;
     padding: 1rem;
     border-radius: 4px;
     overflow-x: auto;
@@ -215,7 +215,7 @@
 .back-link {
   display: inline-block;
   margin-top: 2rem;
-  color: $accent-cyan;
+  color: $accent-secondary;
   font-size: 0.9rem;
 }
 

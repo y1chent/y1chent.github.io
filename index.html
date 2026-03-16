@@ -5,7 +5,10 @@ title: "Yichen Tao — Researcher"
 
 <!-- Hero / About -->
 <section class="hero" id="about">
-  <h1 class="hero-name glitch" data-text="Yichen Tao">Yichen Tao</h1>
+  <div class="terminal-splash" id="terminal-splash">
+    <span class="terminal-text" id="terminal-text"></span>
+    <span class="terminal-cursor" id="terminal-cursor">█</span>
+  </div>
   <p class="hero-tagline">
     <span id="typing-text"></span><span class="typing-cursor"></span>
   </p>
@@ -31,7 +34,7 @@ title: "Yichen Tao — Researcher"
 
 <!-- Publications -->
 <section id="publications">
-  <h2 class="glitch" data-text="Publications">Publications</h2>
+  <h2>Publications</h2>
   <ul class="pub-list">
     {% for pub in site.data.publications %}
     <li class="pub-item">
@@ -52,7 +55,7 @@ title: "Yichen Tao — Researcher"
 
 <!-- Projects -->
 <section id="projects">
-  <h2 class="glitch" data-text="Projects">Projects</h2>
+  <h2>Projects</h2>
   <div class="project-grid">
     {% for project in site.data.projects %}
     <div class="project-card">
@@ -75,7 +78,7 @@ title: "Yichen Tao — Researcher"
 
 <!-- Blog -->
 <section id="blog">
-  <h2 class="glitch" data-text="Blog">Blog</h2>
+  <h2>Blog</h2>
   <ul class="blog-preview-list">
     {% for post in site.posts limit:3 %}
     <li class="blog-preview-item">

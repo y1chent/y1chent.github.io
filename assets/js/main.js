@@ -1,44 +1,39 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // ── Matrix Rain ──
-  const canvas = document.getElementById('matrix-rain');
-  if (canvas && window.innerWidth > 768) {
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+  // ── Terminal Splash Animation ──
+  var splash = document.getElementById('terminal-splash');
+  var splashText = document.getElementById('terminal-text');
+  var splashCursor = document.getElementById('terminal-cursor');
 
-    const chars = 'アイウエオカキクケコサシスセソタチツテト0123456789';
-    const fontSize = 14;
-    const columns = Math.floor(canvas.width / fontSize);
-    const drops = Array(columns).fill(1);
+  if (splash && splashText && splashCursor) {
+    var name = 'Yichen Tao';
+    var charIndex = 0;
+    var glitchPoints = [2, 5, 8]; // indices where glitch occurs
 
-    function drawMatrix() {
-      ctx.fillStyle = 'rgba(10, 10, 10, 0.05)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = '#00ff41';
-      ctx.font = fontSize + 'px monospace';
-
-      for (var i = 0; i < drops.length; i++) {
-        var text = chars[Math.floor(Math.random() * chars.length)];
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
-        }
-        drops[i]++;
-      }
-    }
-
-    var matrixInterval = setInterval(drawMatrix, 50);
-
-    window.addEventListener('resize', function () {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    });
-
-    // Respect reduced motion
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      clearInterval(matrixInterval);
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      splashText.textContent = name;
+    } else {
+      // CRT power-on
+      splash.classList.add('terminal-crt-on');
+
+      setTimeout(function() {
+        function typeChar() {
+          if (charIndex < name.length) {
+            splashText.textContent = name.substring(0, charIndex + 1);
+            charIndex++;
+
+            // Random glitch at certain characters
+            if (glitchPoints.includes(charIndex)) {
+              splash.classList.add('terminal-glitch');
+              setTimeout(function() {
+                splash.classList.remove('terminal-glitch');
+              }, 150);
+            }
+
+            setTimeout(typeChar, 80 + Math.random() * 40); // slight randomness
+          }
+        }
+        typeChar();
+      }, 800); // delay after CRT-on
     }
   }
 
@@ -52,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
       'AI for Health'
     ];
     var phraseIndex = 0;
-    var charIndex = 0;
+    var typingCharIndex = 0;
     var isDeleting = false;
     var typeSpeed = 100;
 
@@ -60,19 +55,19 @@ document.addEventListener('DOMContentLoaded', function () {
       var current = phrases[phraseIndex];
 
       if (isDeleting) {
-        typingEl.textContent = current.substring(0, charIndex - 1);
-        charIndex--;
+        typingEl.textContent = current.substring(0, typingCharIndex - 1);
+        typingCharIndex--;
       } else {
-        typingEl.textContent = current.substring(0, charIndex + 1);
-        charIndex++;
+        typingEl.textContent = current.substring(0, typingCharIndex + 1);
+        typingCharIndex++;
       }
 
       var delay = isDeleting ? 50 : typeSpeed;
 
-      if (!isDeleting && charIndex === current.length) {
+      if (!isDeleting && typingCharIndex === current.length) {
         delay = 2000;
         isDeleting = true;
-      } else if (isDeleting && charIndex === 0) {
+      } else if (isDeleting && typingCharIndex === 0) {
         isDeleting = false;
         phraseIndex = (phraseIndex + 1) % phrases.length;
         delay = 500;

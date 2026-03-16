@@ -16,7 +16,7 @@
 
 .hero-tagline {
   font-size: 1.2rem;
-  color: $accent-cyan;
+  color: $accent-secondary;
   margin-bottom: 1.5rem;
   min-height: 1.8em;
 }
@@ -25,7 +25,7 @@
   display: inline-block;
   width: 2px;
   height: 1.2em;
-  background: $accent-cyan;
+  background: $accent-secondary;
   margin-left: 2px;
   vertical-align: text-bottom;
   animation: blink 0.8s step-end infinite;
@@ -58,7 +58,7 @@
     transition: color 0.2s, transform 0.2s;
 
     &:hover {
-      color: $accent-green;
+      color: $accent;
       transform: translateY(-2px);
     }
   }
